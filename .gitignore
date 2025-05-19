@@ -1,0 +1,70 @@
+# Dependency directories
+node_modules/
+bower_components/
+#json
+*.json
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Build output
+dist/
+build/
+
+# IDEs and editors
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Coverage reports
+coverage/
+
+# Optional npm cache
+.npm/
+
+# Debug folder
+debug/
+
+# TypeScript
+*.tsbuildinfo
+
+# Output of 'npm pack'
+*.tgz
+
+# Next.js build
+.next/
+
+# Parcel build cache
+.cache/
+
+# PM2 logs
+.pids/
+
+# ESLint cache
+.eslintcache
+
+# Storybook
+.out/
+
+# Other
+*.swp
