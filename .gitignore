@@ -1,8 +1,7 @@
 # Dependency directories
 node_modules/
 bower_components/
-#json
-*.json
+
 
 # Logs
 logs
