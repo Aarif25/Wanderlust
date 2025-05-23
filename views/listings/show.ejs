@@ -6,6 +6,7 @@
     <title>Wanderlust</title>
 </head>
 <body>
+    <a href="/listings">home</a>
     <h3> Listing Details</h3>
     <ul>
         <li><%=listingEach.title %></li>
@@ -13,7 +14,11 @@
         <li>&#8377;<%=listingEach.price.toLocaleString("en-In") %></li>
         <li><%=listingEach.location %></li>
         <li><%=listingEach.country %></li>
-
     </ul>
+    <br/>
+    <a href="/listings/<%= listingEach._id %>/edit"> Edit this listing</a>
+    <form method="post" action="/listings/<%= listingEach._id %>?_method=delete">
+        <button >delete this listing</button>
+    </form>
 </body>
 </html>

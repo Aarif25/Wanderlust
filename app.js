@@ -4,6 +4,9 @@ const mongoose = require("mongoose");
 const listing = require("./models/listing.js");
 const path = require("path");
 const mongo_url = 'mongodb://127.0.0.1:27017/wanderlust';
+const methodOverride = require("method-override");
+const ejsMate = require("ejs-mate");
+
 
 main().then(()=>{
     console.log("connected to db")
@@ -18,6 +21,8 @@ async function main(){
 app.set("view engine","ejs");
 app.set("views",path.join(__dirname,"views"));
 app.use(express.urlencoded({extended:true}));// to parse the data/to getuse req paramas
+app.use(methodOverride("_method"));
+app.engine("ejs",ejsMate );
 
 app.get("/",(req, res) =>{
     res.send("root is working")
@@ -45,10 +50,33 @@ app.get("/listings/:id",async(req,res)=>{
 
 //create route
 app.post("/listings",async(req,res)=>{
-     const newListing = new listing(req.body.listingEach);
+     const newListing = new listing (req.body.listing);
+     console.log(newListing);
      await newListing.save();
-     res.redirect("/listings")
+     res.redirect("/listings");
 
+})
+
+//edit route
+app.get("/listings/:id/edit",async(req,res) =>{
+    let {id} = req.params;
+    const listingEach = await listing.findById(id);
+    res.render("./listings/edit.ejs", {listingEach});
+})
+
+//update route
+app.put("/listings/:id",async(req,res)=>{
+    let {id} = req.params;
+    await listing.findByIdAndUpdate(id,{...req.body.listing});
+    res.redirect(`/listings/${id}`)
+
+})
+//delete route
+app.delete("/listings/:id",async(req,res)=>{
+    let {id} = req.params;
+    const deleteListing = await listing.findByIdAndDelete(id);
+    
+    res.redirect("/listings");
 })
 
 
