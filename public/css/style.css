@@ -1,0 +1,97 @@
+.navbar{
+    height: 5rem;
+    background-color: aliceblue;
+}
+.navbar-brand{
+    color: red !important;
+    height: 2rem;
+}
+.nav-link{
+    color :black;
+
+}
+
+.f-info-links a {
+ text-decoration: none;
+ color: #222222;
+ margin: 1.1rem;
+}
+.f-info-links a:hover {
+    text-decoration: underline;
+}
+.f-info-links{
+    width: 100%;
+    
+}
+.f-info-socials {
+    width: 100%;
+    font-size: 1.2rem;
+
+}
+.f-info-socials i {
+ margin: 1.1rem;
+}
+.f-info-socials i:hover{
+    font-size: 105%;
+}
+.f-info{
+    text-align: center;
+    height: 8rem;
+    background-color: #ebebeb;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: space-evenly ;
+}
+#cardc {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    width: 100%;
+    justify-items: center;
+    padding: 20px;
+}
+
+.card {
+    border: none;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    max-width: 320px;
+    background: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.card-body {
+    flex-grow: 1;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+h3{
+    display: flex;
+    justify-content: center;
+}
+.listing-link{
+    text-decoration: none;
+}
+.hi{
+  opacity: 1;
+}
+    
+
+.hi:hover{
+    
+    opacity: 0.1;
+    background-color: white;
+}
